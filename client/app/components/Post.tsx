@@ -3,10 +3,7 @@
 import {
   useContract,
   useContractWrite,
-  useMetamask,
-  ConnectWallet,
 } from "@thirdweb-dev/react";
-import { useRef } from "react";
 
 export default function Post({ post: { content, title, postId } }) {
   const { contract } = useContract(
