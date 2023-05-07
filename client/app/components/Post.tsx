@@ -1,14 +1,9 @@
 "use client";
 
-import {
-  useContract,
-  useContractWrite,
-} from "@thirdweb-dev/react";
+import { useContract, useContractWrite } from "@thirdweb-dev/react";
 
 export default function Post({ post: { content, title, postId } }) {
-  const { contract } = useContract(
-    "0xD9C00b9ba5aad61428df5550861Ac29f8E233cC9"
-  );
+  const { contract } = useContract(process.env.CONTRACT_ADDRESS);
 
   const { mutateAsync: deletePost, isLoading: isDeleting } = useContractWrite(
     contract,

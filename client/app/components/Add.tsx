@@ -11,9 +11,7 @@ import { useRef } from "react";
 export default function Add() {
   const titleRef = useRef();
   const contentRef = useRef();
-  const { contract } = useContract(
-    "0xD9C00b9ba5aad61428df5550861Ac29f8E233cC9"
-  );
+  const { contract } = useContract(process.env.CONTRACT_ADDRESS);
   const { mutateAsync: addPost, isLoading: isCreating } = useContractWrite(
     contract,
     "addPost"

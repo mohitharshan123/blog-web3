@@ -6,9 +6,7 @@ import Add from "./components/Add";
 import Post from "./components/Post";
 
 export default function Home() {
-  const { contract } = useContract(
-    "0xD9C00b9ba5aad61428df5550861Ac29f8E233cC9"
-  );
+  const { contract } = useContract(process.env.CONTRACT_ADDRESS);
   const { data, isLoading } = useContractRead(contract, "getPosts");
 
   const parsedPosts = useMemo(
